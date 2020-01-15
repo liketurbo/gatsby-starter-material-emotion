@@ -37,11 +37,8 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "dev": "gatsby develop -p 3000",
+    "lint": "tsc --noEmit && eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix"
   },
   "repository": {
     "type": "git",
@@ -49,5 +46,17 @@
   },
   "bugs": {
     "url": "https://github.com/dominicabela/gatsby-starter-material-ui/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsc --noEmit && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,md}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
