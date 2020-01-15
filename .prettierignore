@@ -1,9 +1,3 @@
-# VSCode config
-/.vscode/
-
-# Yarn logs
-/yarn-error.log
-
 # Builded files
 /.cache/
 /public/

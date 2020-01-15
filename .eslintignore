@@ -1,8 +1,5 @@
-# VSCode config
-/.vscode/
-
-# Yarn logs
-/yarn-error.log
+# Config files
+/gatsby-*.js
 
 # Builded files
 /.cache/
