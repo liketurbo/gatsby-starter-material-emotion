@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-material-ui",
+  "name": "gatsby-starter-material-emotion",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby and Material UI",
-  "version": "0.1.0",
-  "author": "Dominic Abela <djmabela@gmail.com>",
+  "description": "A simple Gatsby starter to get up and developing quickly with Material UI and Emotion",
+  "version": "1.0.0",
+  "author": "Ramzan Chasygov <theliketurbo@gmail.com>",
   "dependencies": {
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
@@ -64,7 +64,11 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,json,md}": [
+    "*.md": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,jsx,ts,tsx,json}": [
       "prettier --write",
       "eslint --fix",
       "git add"

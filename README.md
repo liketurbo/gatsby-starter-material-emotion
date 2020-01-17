@@ -3,20 +3,22 @@
     <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
   </a>
 </p>
+
 <h1 align="center">
-  Gatsby Material UI Starter
+  Gatsby Material-UI with Emotion Starter
 </h1>
 
-This starter includes [Material UI](https://material-ui.com/) boilerplate and configuration files along with the standard Gatsby configuration files. It provides a starting point for developing Gatsby apps with Material UI. 
+This starter includes [Material-UI](https://material-ui.com) boilerplate and configuration files along with the standard Gatsby configuration files. It provides a starting point for developing Gatsby apps with [Material-UI](https://material-ui.com).
 
-View the demo app [here](https://material-ui-starter.netlify.com/).
+View the demo app [here](https://material-ui-emotion-starter.netlify.com).
 
 ## Features
 
-- Material UI Framework
-- Roboto Typeface (self hosted)
+- [Material-UI](https://material-ui.com)
+- [Emotion](https://emotion.sh)
+- [Roboto Typeface](https://fonts.google.com/specimen/Roboto)
+- [Typescript](https://www.typescriptlang.org) support
 - SEO
-- Offline Support
 - Based on Gatsby Default Starter
 
 ## Quick start
@@ -27,7 +29,7 @@ View the demo app [here](https://material-ui-starter.netlify.com/).
 
     ```sh
     # create a new Gatsby site using the Material UI starter
-    gatsby new <project-name> https://github.com/dominicabela/gatsby-starter-material-ui
+    gatsby new <project-name> https://github.com/liketurbo/gatsby-starter-material-emotion
     ```
 
 2.  **Start developing.**
@@ -36,14 +38,13 @@ View the demo app [here](https://material-ui-starter.netlify.com/).
 
     ```sh
     cd <project-name>
-    gatsby develop
+    yarn dev
     ```
 
 3.  **Open the source code and start editing!**
 
-    Your site is now running at `http://localhost:8000`!
+    Your site is now running at `http://localhost:3000`!
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+    _Note: You'll also see a second link: _`http://localhost:3000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-    Open the `<project-name>` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
-
+    Open the `<project-name>` directory in your code editor of choice and edit `src/pages/index.tsx`. Save your changes and the browser will update in real time!
