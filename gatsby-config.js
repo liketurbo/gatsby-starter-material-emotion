@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: "Gatsby starter with Material UI and Emotion 👩‍🎤",
     description: "Gatsby starter for future projects.",
-    author: "@liketurbo",
+    author: "Ramzan Chasygov <theliketurbo@gmail.com>",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
