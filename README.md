@@ -21,7 +21,7 @@ This starter includes [Material-UI](https://material-ui.com) boilerplate and con
 - [Emotion](https://emotion.sh)
 - [Roboto Typeface](https://fonts.google.com/specimen/Roboto)
 - SEO
-- [Typescript](https://www.typescriptlang.org) support
+- [Typescript](https://www.typescriptlang.org)
 
 ## Quick start
 

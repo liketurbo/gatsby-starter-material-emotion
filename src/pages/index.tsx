@@ -8,7 +8,7 @@ import { Theme } from "@material-ui/core/styles"
 import { useTheme } from "emotion-theming"
 import { useState } from "react"
 
-import Image from "../components/Image"
+import ImageAstronaut from "../components/Image/ImageAstronaut"
 import Layout from "../components/Layout"
 import ListItemExpandable from "../components/ListItem/ListItemExpandable"
 import ListItemSimple from "../components/ListItem/ListItemSimple"
@@ -46,7 +46,7 @@ const IndexPage = () => {
               maxWidth: "100px",
             }}
           >
-            <Image />
+            <ImageAstronaut />
           </div>
         </Grid>
         <Grid item xs={8}>
