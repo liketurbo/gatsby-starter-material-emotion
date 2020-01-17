@@ -43,7 +43,11 @@
     "typescript": "^3.7.5"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "gatsby-starter",
+    "emotion",
+    "material-ui",
+    "typescript"
   ],
   "license": "MIT",
   "scripts": {
@@ -53,10 +57,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dominicabela/gatsby-starter-material-ui"
+    "url": "https://github.com/liketurbo/gatsby-starter-material-emotion"
   },
   "bugs": {
-    "url": "https://github.com/dominicabela/gatsby-starter-material-ui/issues"
+    "url": "https://github.com/liketurbo/gatsby-starter-material-emotion/issues"
   },
   "husky": {
     "hooks": {
