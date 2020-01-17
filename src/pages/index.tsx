@@ -4,24 +4,21 @@ import Collapse from "@material-ui/core/Collapse"
 import Divider from "@material-ui/core/Divider"
 import Grid from "@material-ui/core/Grid"
 import List from "@material-ui/core/List"
-import ListItem from "@material-ui/core/ListItem"
-import ListItemIcon from "@material-ui/core/ListItemIcon"
-import ListItemText from "@material-ui/core/ListItemText"
 import { Theme } from "@material-ui/core/styles"
-import Done from "@material-ui/icons/Done"
-import ExpandLess from "@material-ui/icons/ExpandLess"
-import ExpandMore from "@material-ui/icons/ExpandMore"
-import InfoIcon from "@material-ui/icons/Info"
-import StarIcon from "@material-ui/icons/Star"
+import { useTheme } from "emotion-theming"
 import { useState } from "react"
 
 import Image from "../components/Image"
 import Layout from "../components/Layout"
+import ListItemExpandable from "../components/ListItem/ListItemExpandable"
+import ListItemSimple from "../components/ListItem/ListItemSimple"
 import Seo from "../components/Seo"
 
 const IndexPage = () => {
   const [features, setFeatures] = useState(true)
   const [info, setInfo] = useState(true)
+
+  const theme = useTheme<Theme>()
 
   const handleClick = (id: string) => {
     switch (id) {
@@ -64,108 +61,34 @@ const IndexPage = () => {
       <Divider />
       <List
         component="nav"
-        css={(theme: Theme) => ({
+        css={{
           backgroundColor: theme.palette.background.paper,
           width: "100%",
-        })}
+        }}
       >
-        <ListItem button id="features" onClick={() => handleClick("features")}>
-          <ListItemIcon>
-            <StarIcon />
-          </ListItemIcon>
-          <ListItemText primary="Features" />
-          {features ? <ExpandLess /> : <ExpandMore />}
-        </ListItem>
+        <ListItemExpandable
+          active={features}
+          icon="star"
+          setActive={() => handleClick("features")}
+          title="Features"
+        />
         <Collapse in={!features} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItem
-              button
-              css={(theme: Theme) => ({
-                paddingLeft: theme.spacing(4),
-              })}
-            >
-              <ListItemIcon>
-                <Done />
-              </ListItemIcon>
-              <ListItemText primary="Material UI Framework" />
-            </ListItem>
-            <ListItem
-              button
-              css={(theme: Theme) => ({
-                paddingLeft: theme.spacing(4),
-              })}
-            >
-              <ListItemIcon>
-                <Done />
-              </ListItemIcon>
-              <ListItemText primary="Progressive Web App" />
-            </ListItem>
-            <ListItem
-              button
-              css={(theme: Theme) => ({
-                paddingLeft: theme.spacing(4),
-              })}
-            >
-              <ListItemIcon>
-                <Done />
-              </ListItemIcon>
-              <ListItemText primary="SEO" />
-            </ListItem>
-            <ListItem
-              button
-              css={(theme: Theme) => ({
-                paddingLeft: theme.spacing(4),
-              })}
-            >
-              <ListItemIcon>
-                <Done />
-              </ListItemIcon>
-              <ListItemText primary="Offline Support" />
-            </ListItem>
-            <ListItem
-              button
-              css={(theme: Theme) => ({
-                paddingLeft: theme.spacing(4),
-              })}
-            >
-              <ListItemIcon>
-                <Done />
-              </ListItemIcon>
-              <ListItemText primary="Roboto Typeface (self hosted)" />
-            </ListItem>
+            <ListItemSimple title="Material-UI" />
+            <ListItemSimple title="SEO" />
+            <ListItemSimple title="Roboto Typeface" />
           </List>
         </Collapse>
-        <ListItem button onClick={() => handleClick("info")}>
-          <ListItemIcon>
-            <InfoIcon />
-          </ListItemIcon>
-          <ListItemText primary="Info" />
-          {info ? <ExpandLess /> : <ExpandMore />}
-        </ListItem>
+        <ListItemExpandable
+          active={info}
+          icon="info"
+          setActive={() => handleClick("info")}
+          title="Info"
+        />
         <Collapse in={!info} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItem
-              button
-              css={(theme: Theme) => ({
-                paddingLeft: theme.spacing(4),
-              })}
-            >
-              <ListItemIcon>
-                <Done />
-              </ListItemIcon>
-              <ListItemText primary="Based on Gatsby Default Starter" />
-            </ListItem>
-            <ListItem
-              button
-              css={(theme: Theme) => ({
-                paddingLeft: theme.spacing(4),
-              })}
-            >
-              <ListItemIcon>
-                <Done />
-              </ListItemIcon>
-              <ListItemText primary="Uses Gatsby Material UI Plugin" />
-            </ListItem>
+            <ListItemSimple title="Based on Gatsby Default Starter" />
+            <ListItemSimple title="Uses Gatsby Material-UI Plugin" />
           </List>
         </Collapse>
       </List>
