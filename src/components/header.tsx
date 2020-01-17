@@ -1,5 +1,6 @@
+/** @jsx jsx */
+import { jsx } from "@emotion/core"
 import AppBar from "@material-ui/core/AppBar"
-import CssBaseline from "@material-ui/core/CssBaseline"
 import Divider from "@material-ui/core/Divider"
 import Drawer from "@material-ui/core/Drawer"
 import IconButton from "@material-ui/core/IconButton"
@@ -7,107 +8,65 @@ import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemIcon from "@material-ui/core/ListItemIcon"
 import ListItemText from "@material-ui/core/ListItemText"
-import { makeStyles, useTheme } from "@material-ui/core/styles"
+import { Theme } from "@material-ui/core/styles"
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
 import ChevronRightIcon from "@material-ui/icons/ChevronRight"
 import HomeIcon from "@material-ui/icons/Home"
 import MenuIcon from "@material-ui/icons/Menu"
-import ListIcon from "@material-ui/icons/ViewList"
-import clsx from "clsx"
+import { useTheme } from "emotion-theming"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import { FC, useState } from "react"
 
-const drawerWidth = 240
+const Header: FC<HeaderProps> = ({ siteTitle }) => {
+  const [open, setOpen] = useState(false)
+  const theme = useTheme<Theme>()
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    display: "flex",
-  },
-  appBar: {
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    background: "linear-gradient(to right,  #663399, #5B72FF)",
-  },
-  appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  hide: {
-    display: "none",
-  },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  drawerHeader: {
-    display: "flex",
-    alignItems: "center",
-    padding: "0 8px",
-    ...theme.mixins.toolbar,
-    justifyContent: "flex-end",
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: -drawerWidth,
-  },
-  contentShift: {
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginLeft: 0,
-  },
-}))
+  const drawerWidth = 240
 
-const Header = ({ siteTitle }) => {
-  const classes = useStyles()
-
-  const theme = useTheme()
-  const [open, setOpen] = React.useState(false)
-
-  function handleDrawerOpen() {
+  const handleDrawerOpen = () => {
     setOpen(true)
   }
 
-  function handleDrawerClose() {
+  const handleDrawerClose = () => {
     setOpen(false)
   }
 
   return (
-    <div className={classes.root}>
-      <CssBaseline />
+    <div css={{ display: "flex" }}>
       <AppBar
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
-        })}
+        css={[
+          {
+            background: "linear-gradient(to right,  #663399, #5B72FF)",
+            transition: theme.transitions.create(["margin", "width"], {
+              duration: theme.transitions.duration.leavingScreen,
+              easing: theme.transitions.easing.sharp,
+            }),
+          },
+          open && {
+            marginLeft: drawerWidth,
+            transition: theme.transitions.create(["margin", "width"], {
+              duration: theme.transitions.duration.enteringScreen,
+              easing: theme.transitions.easing.easeOut,
+            }),
+            width: `calc(100% - ${drawerWidth}px)`,
+          },
+        ]}
         elevation={0}
         position="fixed"
       >
         <Toolbar>
           <IconButton
             aria-label="Open drawer"
-            className={clsx(classes.menuButton, open && classes.hide)}
             color="inherit"
+            css={[
+              {
+                marginRight: theme.spacing(2),
+              },
+              open && { display: "none" },
+            ]}
             edge="start"
             onClick={handleDrawerOpen}
           >
@@ -120,14 +79,26 @@ const Header = ({ siteTitle }) => {
       </AppBar>
       <Drawer
         anchor="left"
-        classes={{
-          paper: classes.drawerPaper,
+        css={{
+          "& > div": {
+            width: drawerWidth,
+          },
+          flexShrink: 0,
+          width: drawerWidth,
         }}
-        className={classes.drawer}
         open={open}
         variant="persistent"
       >
-        <div className={classes.drawerHeader}>
+        <div
+          css={{
+            alignItems: "center",
+            display: "flex",
+            justifyContent: "flex-end",
+            padding: "0 8px",
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            ...(theme.mixins.toolbar as any),
+          }}
+        >
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "ltr" ? (
               <ChevronLeftIcon />
@@ -143,15 +114,15 @@ const Header = ({ siteTitle }) => {
               <HomeIcon />
             </ListItemIcon>
             <ListItemText>
-              <Link to="/">Home</Link>
-            </ListItemText>
-          </ListItem>
-          <ListItem button>
-            <ListItemIcon>
-              <ListIcon />
-            </ListItemIcon>
-            <ListItemText>
-              <Link to="/components">Components</Link>
+              <Link
+                css={{
+                  color: "inherit",
+                  textDecoration: "inherit",
+                }}
+                to="/"
+              >
+                {"Home"}
+              </Link>
             </ListItemText>
           </ListItem>
         </List>
@@ -165,7 +136,11 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: "",
+}
+
+export interface HeaderProps {
+  siteTitle?: string
 }
 
 export default Header

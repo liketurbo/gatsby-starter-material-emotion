@@ -1,50 +1,45 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
+/** @jsx jsx */
+import { jsx } from "@emotion/core"
+import { graphql, useStaticQuery } from "gatsby"
+import PropTypes from "prop-types"
+import { FC } from "react"
 
-import React from 'react'
-import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
+import Header from "./Header"
 
-import Header from './header'
-import './layout.css'
-
-const Layout = ({ children }) => {
-  return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-            }
-          }
+const Layout: FC = ({ children }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
         }
-      `}
-      render={data => (
-        <div style={{ minHeight: '100vh', backgroundColor: '#FFF' }}>
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <div
-            style={{
-              margin: `0 auto`,
-              maxWidth: 960,
-              padding: `0px 1.0875rem 1.45rem`,
-              paddingTop: 100,
-            }}
-          >
-            <main>{children}</main>
-            <footer style={{ paddingTop: 10 }}>
-              © {new Date().getFullYear()}, Built with
-              {` `}
-              <a href="https://www.gatsbyjs.org">Gatsby</a>
-            </footer>
-          </div>
-        </div>
-      )}
-    />
+      }
+    }
+  `)
+
+  return (
+    <div
+      css={{
+        backgroundColor: "#FFF",
+        minHeight: "100vh",
+      }}
+    >
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <div
+        style={{
+          margin: `0 auto`,
+          maxWidth: 960,
+          padding: `0px 1.0875rem 1.45rem`,
+          paddingTop: 100,
+        }}
+      >
+        <main>{children}</main>
+        <footer css={{ paddingTop: 10 }}>
+          {`© ${new Date().getFullYear()}, Built with `}
+          <a href="https://www.gatsbyjs.org">{"Gatsby"}</a>
+        </footer>
+      </div>
+    </div>
   )
 }
 
