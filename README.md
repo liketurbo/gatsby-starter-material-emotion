@@ -12,7 +12,7 @@
 
 This starter includes [Material-UI](https://material-ui.com) boilerplate and configuration files along with the standard Gatsby configuration files. It provides a starting point for developing Gatsby apps with [Material-UI](https://material-ui.com).
 
-View the demo app [here](https://material-ui-emotion-starter.netlify.com).
+🌐 View the [demo](https://gatsby-starter-material-emotion.netlify.com).
 
 ## Features
 
