@@ -16,12 +16,12 @@ View the demo app [here](https://material-ui-emotion-starter.netlify.com).
 
 ## Features
 
+- Based on [Gatsby Default Starter](https://github.com/gatsbyjs/gatsby-starter-default)
 - [Material-UI](https://material-ui.com)
 - [Emotion](https://emotion.sh)
 - [Roboto Typeface](https://fonts.google.com/specimen/Roboto)
-- [Typescript](https://www.typescriptlang.org) support
 - SEO
-- Based on [Gatsby Default Starter](https://github.com/gatsbyjs/gatsby-starter-default)
+- [Typescript](https://www.typescriptlang.org) support
 
 ## Quick start
 
