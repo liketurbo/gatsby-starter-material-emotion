@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4e685fe2-3bd0-4568-bb8a-bd6b4093d214/deploy-status)](https://app.netlify.com/sites/gatsby-starter-material-emotion/deploys)
+
 <p align="center">
   <a href="https://www.gatsbyjs.org">
     <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
