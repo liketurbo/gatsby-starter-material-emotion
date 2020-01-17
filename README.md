@@ -5,7 +5,7 @@
 </p>
 
 <h1 align="center">
-  Gatsby Material-UI with Emotion Starter
+  Gatsby Starter of Material-UI with Emotion
 </h1>
 
 This starter includes [Material-UI](https://material-ui.com) boilerplate and configuration files along with the standard Gatsby configuration files. It provides a starting point for developing Gatsby apps with [Material-UI](https://material-ui.com).
