@@ -2,9 +2,11 @@ const path = require("path")
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby starter with Material UI and Emotion 👩‍🎤",
-    description: "Gatsby starter for future projects.",
     author: "Ramzan Chasygov <theliketurbo@gmail.com>",
+    desc: "Gatsby starter for future projects.",
+    siteName: "Material UI and Emotion 👩‍🎤",
+    title: "Gatsby starter with Material UI and Emotion 👩‍🎤",
+    url: "https://example.org",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
