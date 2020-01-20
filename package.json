@@ -52,6 +52,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "clean": "gatsby clean",
     "dev": "gatsby develop -p 3000",
     "lint": "tsc --noEmit && eslint . --ext .js,.jsx,.ts,.tsx --quiet --fix"
   },
