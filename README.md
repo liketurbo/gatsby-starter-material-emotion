@@ -25,7 +25,7 @@ This starter includes [Material-UI](https://material-ui.com) boilerplate and con
 
 ## Quick start
 
-1.  **Create a Gatsby site.**
+1.  **Create a Gatsby site**
 
     Use the Gatsby CLI to create a new site, specifying the default starter.
 
@@ -34,7 +34,7 @@ This starter includes [Material-UI](https://material-ui.com) boilerplate and con
     gatsby new <project-name> https://github.com/liketurbo/gatsby-starter-material-emotion
     ```
 
-2.  **Start developing.**
+2.  **Start developing**
 
     Navigate into your new site’s directory and start it up.
 
@@ -43,7 +43,7 @@ This starter includes [Material-UI](https://material-ui.com) boilerplate and con
     yarn dev
     ```
 
-3.  **Open the source code and start editing!**
+3.  **Open the source code and start editing**
 
     Your site is now running at `http://localhost:3000`!
 
