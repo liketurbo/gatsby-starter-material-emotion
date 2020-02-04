@@ -1,11 +1,10 @@
 import CssBaseline from "@material-ui/core/CssBaseline"
+import { createMuiTheme } from "@material-ui/core/styles"
 import { ThemeProvider } from "emotion-theming"
 import React, { ReactNode } from "react"
 
-import ThemeLight from "../themes/ThemeLight"
-
 const wrapRootElement = ({ element }: { element: ReactNode }) => (
-  <ThemeProvider theme={ThemeLight}>
+  <ThemeProvider theme={createMuiTheme()}>
     <CssBaseline />
     {element}
   </ThemeProvider>

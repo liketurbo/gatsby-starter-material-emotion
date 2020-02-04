@@ -1,47 +1,30 @@
 /** @jsx jsx */
-import { jsx } from "@emotion/core"
-import { graphql, useStaticQuery } from "gatsby"
+import { Global, jsx } from "@emotion/core"
+import Container from "@material-ui/core/Container"
 import PropTypes from "prop-types"
-import { FC } from "react"
+import { FC, Fragment } from "react"
 
+import Footer from "./Footer"
 import Header from "./Header"
 
-const Layout: FC = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
-  return (
-    <div
-      css={{
-        backgroundColor: "#FFF",
-        minHeight: "100vh",
+const Layout: FC = ({ children }) => (
+  // eslint-disable-next-line react/jsx-fragments
+  <Fragment>
+    <Global
+      styles={{
+        "#gatsby-focus-wrapper": {
+          background: "white",
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh",
+        },
       }}
-    >
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 100,
-        }}
-      >
-        <main>{children}</main>
-        <footer css={{ paddingTop: 10 }}>
-          {`© ${new Date().getFullYear()}, Built with `}
-          <a href="https://www.gatsbyjs.org">{"Gatsby"}</a>
-        </footer>
-      </div>
-    </div>
-  )
-}
+    />
+    <Header />
+    <Container css={{ flex: 1 }}>{children}</Container>
+    <Footer />
+  </Fragment>
+)
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
