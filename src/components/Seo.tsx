@@ -41,7 +41,7 @@ const Seo: FC<SeoProps> = ({ desc, title }) => {
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
         rel="stylesheet"
       />
-      <title>{title ? `${title} — ${mainTitle}` : mainTitle}</title>
+      <title>{title}</title>
       <meta content={desc} name="description" />
       <meta content={desc} property="og:description" />
       <meta content={title} property="og:title" />
