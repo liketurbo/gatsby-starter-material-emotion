@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { Global, jsx } from "@emotion/core"
 import Container from "@material-ui/core/Container"
+import CssBaseline from "@material-ui/core/CssBaseline"
 import PropTypes from "prop-types"
 import { FC, Fragment } from "react"
 
@@ -10,10 +11,10 @@ import Header from "./Header"
 const Layout: FC = ({ children }) => (
   // eslint-disable-next-line react/jsx-fragments
   <Fragment>
+    <CssBaseline />
     <Global
       styles={{
         "#gatsby-focus-wrapper": {
-          background: "white",
           display: "flex",
           flexDirection: "column",
           minHeight: "100vh",
