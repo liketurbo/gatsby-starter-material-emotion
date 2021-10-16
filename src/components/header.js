@@ -1,7 +1,7 @@
-import * as React from "react"
-import PropTypes from "prop-types"
+import { AppBar, Link as MuiLink,Toolbar, Typography } from "@mui/material"
 import { Link } from "gatsby"
-import { AppBar, Toolbar, Typography, Link as MuiLink } from "@mui/material"
+import PropTypes from "prop-types"
+import * as React from "react"
 
 const Header = ({ siteTitle }) => (
   <AppBar

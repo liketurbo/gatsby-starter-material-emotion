@@ -1,10 +1,10 @@
-import * as React from "react"
+import { Link as MuiLink,Typography } from "@mui/material"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import * as React from "react"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Typography, Link as MuiLink } from "@mui/material"
 
 const IndexPage = () => (
   <Layout>

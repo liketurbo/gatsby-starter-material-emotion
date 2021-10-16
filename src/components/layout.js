@@ -5,12 +5,12 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from "react"
+import { Box,Link } from "@mui/material"
+import { graphql,useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import * as React from "react"
 
 import Header from "./header"
-import { Link, Box } from "@mui/material"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

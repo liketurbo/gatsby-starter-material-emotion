@@ -1,10 +1,10 @@
 // If you don't want to use TypeScript you can delete this file!
+import { Link as MuiLink,Typography } from "@mui/material"
+import { graphql,Link, PageProps } from "gatsby"
 import * as React from "react"
-import { PageProps, Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Typography, Link as MuiLink } from "@mui/material"
 
 type DataProps = {
   site: {
