@@ -2,12 +2,13 @@ import * as React from "react"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { Typography } from "@mui/material"
 
 const NotFoundPage = () => (
   <Layout>
     <Seo title="404: Not found" />
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <Typography variant="h4" component="h1">404: Not Found</Typography>
+    <Typography>You just hit a route that doesn&#39;t exist... the sadness.</Typography>
   </Layout>
 )
 

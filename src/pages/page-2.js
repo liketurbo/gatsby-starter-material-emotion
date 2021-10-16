@@ -3,13 +3,14 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { Typography, Link as MuiLink } from "@mui/material"
 
 const SecondPage = () => (
   <Layout>
     <Seo title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <Typography variant="h4" component="h1">Hi from the second page</Typography>
+    <Typography>Welcome to page 2</Typography>
+    <MuiLink component={Link} to="/">Go back to the homepage</MuiLink>
   </Layout>
 )
 
